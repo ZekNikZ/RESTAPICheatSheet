@@ -26,7 +26,7 @@ Note also the distinction between **safe** and **idempotent** methods:
 | **POST**  | Creating  | **201 (Created)**: if creating was successful. <br/>Use `Location` header to give client a link to access that indidivual resource (e.g., `/users/123`). | _Not recommended_<br/>**404 (Not Found)** or **409 (Conflict)**: if resource already exists. |
 | **GET**<br/>(safe)  | Reading | **200 (OK)**: provide list of resources | **200 (OK)**: provide single resource<br/>**404 (Not Found)** if ID was not found or invalid |
 | **PUT**<br/>(idempotent) | Updating<br/>(Replacing) | **405 (Method Not Allowed)**: unless you support updating _every_ resource in the collection | **200 (OK)** or **204 (No Content)**: success<br/>**404 (Not Found)** if ID was not found or invalid |
-| **_PATCH*_** | Updating<br/>(Modifying) | **405 (Method Not Allowed)**: unless you support modifying the _collection_ itself | **200 (OK)** or **204 (No Content)**: success<br/>**404 (Not Found)** if ID was not found or invalid |
+| **_PATCH_*** | Updating<br/>(Modifying) | **405 (Method Not Allowed)**: unless you support modifying the _collection_ itself | **200 (OK)** or **204 (No Content)**: success<br/>**404 (Not Found)** if ID was not found or invalid |
 | **DELETE**<br/>(idempotent) | Deleting | **405 (Method Not Allowed)**: unless you support deleting the _entire_ collection | **200 (OK)**: success<br/>**404 (Not Found)** if ID was not found or invalid |
 
 Some general HTTP response codes:
